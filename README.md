@@ -4,7 +4,7 @@
 ## Project Setup
 
 ```sh
-npm install
+npm init
 ```
 
 ### Compile and Hot-Reload for Development
