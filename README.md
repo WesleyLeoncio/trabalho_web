@@ -1,4 +1,4 @@
-# trabalho_web
+# Trabalho Web
 
 
 ## Project Setup
