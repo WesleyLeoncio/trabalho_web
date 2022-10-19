@@ -1,6 +1,14 @@
 # trabalho_web
 
 
-# npm init 
+## Project Setup
 
-## npm run start 
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
