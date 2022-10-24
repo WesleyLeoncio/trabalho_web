@@ -12,7 +12,7 @@ export const createGrupoMuscular = async (req, res, next) => {
 
 export const updateGrupoMuscular = async (req, res, next) => {
     try {
-        const updatedGrupoMuscular = await GrupoMuscular.findByIdAndUpdate(req.body._id, { $set:
+        const updatedGrupoMuscular = await GrupoMuscular.findByIdAndUpdate(req.params.id, { $set:
 req.body }, { new: true });
         res.status(200).json(updatedGrupoMuscular);
     } catch (error) {
