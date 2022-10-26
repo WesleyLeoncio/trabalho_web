@@ -3,7 +3,7 @@ import Exercicio from "./Exercicio.js";
 const { Schema } = mongoose;
 const FichaSchema = new Schema(
     {
-        aluno: { type: Schema.Types.ObjectId, ref: "Aluno" },
+        //aluno: { type: Schema.Types.ObjectId, ref: "Aluno" },
         instrutor: { type: Schema.Types.ObjectId, ref: "Instrutor" },
         ativa: {
             type: Boolean,
