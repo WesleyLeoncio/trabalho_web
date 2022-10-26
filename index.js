@@ -7,7 +7,6 @@ import routeAlunos from "./routes/routesAlunos.js";
 import routeGrupoMusculares from "./routes/routesGrupoMusculares.js";
 import routeTipoExercicios from "./routes/routesTipoExercicios.js";
 import routeInstrutores from "./routes/routesInstrutores.js";
-//import routeExercicios from "./routes/routesExercicios.js";
 import routeFichas from "./routes/routesFichas.js";
 
 const app = express();
@@ -20,7 +19,6 @@ app.use("/api/gruposmusculares", routeGrupoMusculares);
 app.use("/api/tiposexercicios", routeTipoExercicios);
 app.use("/api/alunos", routeAlunos);
 app.use("/api/instrutores", routeInstrutores);
-//app.use("/api/exercios", routeExercicios);
 app.use("/api/fichas", routeFichas);
 
 app.listen(8080, () => {
