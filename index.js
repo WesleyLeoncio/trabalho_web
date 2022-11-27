@@ -4,7 +4,7 @@ import connectDatabase from "./config/db.js";
 import { errorHandling } from "./utils/error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
+import { verificarToken } from "./utils/verificarToken.js";
 import routeAlunos from "./routes/routesAlunos.js";
 import routeAuth from "./routes/authRoutes.js";
 import routeGrupoMusculares from "./routes/routesGrupoMusculares.js";
@@ -21,11 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(errorHandling);
 
-app.use("/api/gruposmusculares", routeGrupoMusculares);
-app.use("/api/tiposexercicios", routeTipoExercicios);
-app.use("/api/alunos", routeAlunos);
-app.use("/api/instrutores", routeInstrutores);
-app.use("/api/fichas", routeFichas);
+app.use("/api/gruposmusculares",verificarToken, routeGrupoMusculares);
+app.use("/api/tiposexercicios",verificarToken, routeTipoExercicios);
+app.use("/api/alunos",verificarToken, routeAlunos);
+app.use("/api/instrutores",verificarToken, routeInstrutores);
+app.use("/api/fichas",verificarToken, routeFichas);
 app.use("/api/auth", routeAuth);
 
 app.listen(8080, () => {

@@ -4,6 +4,7 @@ import { createError } from "../utils/error.js";
 export const verificarToken = (req, res, next) => {
     try {
         const accessToken = req.cookies.accessToken;
+        console.log(accessToken);
         if (!accessToken) { 
             return next(createError(401, "Você não está autenticado.")); 
         }
