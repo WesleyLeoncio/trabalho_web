@@ -11,4 +11,6 @@ npm init
 
 ```sh
 npm run start
+
+teste
 ```
