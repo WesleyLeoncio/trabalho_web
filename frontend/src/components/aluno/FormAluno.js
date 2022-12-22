@@ -1,8 +1,8 @@
-import FormInput from "./FormInput";
-import CleaveInput from "./CleaveInput";
-import FormSelect from "./FormSelect";
+import FormInput from "../FormInput";
+import CleaveInput from "../CleaveInput";
+import FormSelect from "../FormSelect";
 
-const FormInstrutor = ({ handleChange, inputs, errors, isNew }) => {
+const FormAluno = ({ handleChange, inputs, errors, isNew }) => {
     return (
         <>
             <div className="row">
@@ -11,7 +11,10 @@ const FormInstrutor = ({ handleChange, inputs, errors, isNew }) => {
                 </div>
                 <div className="col-6 col-md-3">
                     <FormInput type="date" field="dataNascimento" placeholder="1900-01-01" label="Data de Nascimento" onChange={handleChange} value={inputs?.dataNascimento?.substring(0, 10)} error={errors?.dataNascimento} />
-                </div>  
+                </div>
+                <div className="col-6 col-md-3">
+                    <CleaveInput type="tel" field="cpf" placeholder="000.000.000-00" label="CPF" onChange={handleChange} options={{ blocks: [3, 3, 3, 2], delimiters: [".", ".", "-"], numericOnly: true }} value={inputs?.cpf} error={errors?.cpf} />
+                </div>
                 <div className="col-6 col-md-3">
                     <FormSelect
                         field="sexo"
@@ -26,7 +29,10 @@ const FormInstrutor = ({ handleChange, inputs, errors, isNew }) => {
                             { label: "Outro", value: "O" },
                         ]}
                     />
-                </div>   
+                </div>
+                <div className="col-6 col-md-3">
+                    <CleaveInput type="tel" field="telefone" placeholder="(99) 99999-9999" label="Telefone (com DDD)" onChange={handleChange} options={{ blocks: [0, 2, 0, 5, 4], delimiters: ["(", ")", " ", "-"], onlyNumbers: true }} value={inputs?.telefone} error={errors?.telefone} />
+                </div>
                 <div className="col-6 col-md-6">
                     <FormInput type="email" field="email" placeholder="fulano@email.com" label="E-mail" onChange={handleChange} value={inputs?.email} error={errors?.email} />
                 </div>
@@ -60,4 +66,4 @@ const FormInstrutor = ({ handleChange, inputs, errors, isNew }) => {
     );
 };
 
-export default FormInstrutor;
+export default FormAluno;

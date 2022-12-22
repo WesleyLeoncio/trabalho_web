@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import axios from "axios";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
-import FormAluno from "../../components/FormAluno";
+import FormAluno from "../../components/aluno/FormAluno";
 import InformModal from "../../components/InformModal";
 import { authHeader } from "../../services/authServices";
 

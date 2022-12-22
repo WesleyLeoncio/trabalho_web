@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
-import ConfirmModal from "./ConfirmModal";
-import InformModal from "./InformModal";
-import { authHeader } from "../services/authServices";
+import ConfirmModal from "../ConfirmModal";
+import InformModal from "../InformModal";
+import { authHeader } from "../../services/authServices";
 
 const TableAlunos = ({ alunos, setAlunos }) => {
     const [alunoExcluir, setAlunoExcluir] = useState(null);
