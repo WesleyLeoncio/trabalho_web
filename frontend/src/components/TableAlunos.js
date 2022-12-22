@@ -17,6 +17,17 @@ const TableAlunos = ({ alunos, setAlunos }) => {
         confirmModal.show();
     }
 
+    function sexo(vSexo) {
+        switch (vSexo) {
+            case "M":
+                return "Masculino";
+            case "F":
+                return "Feminino"
+            default:
+                return "Outro"
+        }
+    }
+
     function excluirAluno() {
         axios
             .delete(`http://localhost:8080/api/alunos/${alunoExcluir._id}`, { headers: authHeader() })
@@ -32,6 +43,7 @@ const TableAlunos = ({ alunos, setAlunos }) => {
                 modal.hide();
             });
     }
+
 
     return alunos.length === 0 ? (
         <div className="alert alert-info">Nenhum aluno cadastrado</div>
@@ -56,7 +68,7 @@ const TableAlunos = ({ alunos, setAlunos }) => {
                             <td>{new Date(aluno.dataNascimento.substring(0, 10) + "T12:00:00").toLocaleDateString()}</td>
                             <td>{aluno.telefone}</td>
                             <td>{aluno.email}</td>
-                            <td>{aluno.sexo === "M" ? "Masculino" : "Feminino"}</td>
+                            <td>{sexo(aluno.sexo)}</td>
                             <td>{aluno.ativo ? "Ativo" : "Inativo"}</td>
                             <td>
                                 <Link className="btn btn-sm btn-warning me-1" to={`/alunos/alterar/${aluno._id}`}>

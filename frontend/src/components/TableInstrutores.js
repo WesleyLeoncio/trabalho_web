@@ -7,7 +7,7 @@ import InformModal from "./InformModal";
 import { authHeader } from "../services/authServices";
 
 const TableInstrutores = ({ instrutores, setInstrutores }) => {
-     const [instrutorExcluir, setInstrutorExcluir] = useState(null);
+    const [instrutorExcluir, setInstrutorExcluir] = useState(null);
     const [modal, setModal] = useState(undefined);
 
     function confirmarExclusao(instrutor) {
@@ -15,6 +15,17 @@ const TableInstrutores = ({ instrutores, setInstrutores }) => {
         const confirmModal = new bootstrap.Modal("#confirmModal", {});
         setModal(confirmModal);
         confirmModal.show();
+    }
+
+    function sexo(vSexo) {
+        switch (vSexo) {
+            case "M":
+                return "Masculino";
+            case "F":
+                return "Feminino"
+            default:
+                return "Outro"
+        }
     }
 
     function excluirInstrutor() {
@@ -54,7 +65,7 @@ const TableInstrutores = ({ instrutores, setInstrutores }) => {
                             <td>{instrutor.nome}</td>
                             <td>{new Date(instrutor.dataNascimento.substring(0, 10) + "T12:00:00").toLocaleDateString()}</td>
                             <td>{instrutor.email}</td>
-                            <td>{instrutor.sexo === "M" ? "Masculino" : "Feminino"}</td>
+                            <td>{sexo(instrutor.sexo)}</td>
                             <td>{instrutor.ativo ? "Ativo" : "Inativo"}</td>
                             <td>
                                 <Link className="btn btn-sm btn-warning me-1" to={`/instrutores/alterar/${instrutor._id}`}>

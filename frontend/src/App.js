@@ -12,6 +12,8 @@ import Logout from "./pages/Logout";
 import Ativos from "./pages/alunos/Ativos";
 
 import Instrutores from "./pages/instrutores/Listagem";
+import CadastroInstrutor from "./pages/instrutores/CadastroInstrutor";
+import AlterarInstrutor from "./pages/instrutores/AlteracaoInstrutor";
 
 const App = () => {
     return (
@@ -27,8 +29,8 @@ const App = () => {
                         </Route>
                         <Route path="instrutores">
                             <Route index element={<Instrutores />} />
-                            <Route path="cadastrar" element={<Cadastro />} />
-                            <Route path="alterar/:id" element={<Alteracao />} />
+                            <Route path="cadastrar" element={<CadastroInstrutor />} />
+                            <Route path="alterar/:id" element={<AlterarInstrutor />} />
                         </Route>
                         <Route path="ativos" element={<Ativos />} />
                     </Route>
